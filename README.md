@@ -1,73 +1,94 @@
-# React + TypeScript + Vite
+# ✂️ Barbearia Navalha — Landing Page
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Landing page para uma barbearia, pensada para **transformar visitas em agendamentos pelo WhatsApp**. Visual escuro com detalhes em dourado, layout responsivo e chamadas para ação em todos os pontos da página.
 
-Currently, two official plugins are available:
+<!-- Dica: tire um print da página, salve como docs/preview.png e troque este comentário por:
+![Preview da landing page](docs/preview.png) -->
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🎯 Objetivo
 
-## React Compiler
+Barbearias vivem de agenda cheia. Esta página foi construída com um único foco: levar o cliente do primeiro contato ao agendamento com o menor número de cliques possível.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## ✨ Funcionalidades
 
-## Expanding the ESLint configuration
+- **Hero com CTA duplo** — "Agendar no WhatsApp" ou rolagem suave até os serviços
+- **Catálogo de serviços** — cards com ícone, descrição e preço, gerados a partir de um array de dados
+- **Seção de contato** — endereço, horário de funcionamento e WhatsApp
+- **Botão flutuante de WhatsApp** — sempre visível, em qualquer ponto da página
+- **Menu responsivo** — menu hambúrguer animado no mobile
+- **Rodapé** com links para Instagram, WhatsApp e localização no Google Maps
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## 🛠️ Tecnologias
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+| Tecnologia | Uso |
+|---|---|
+| [React 19](https://react.dev/) | Interface em componentes |
+| [TypeScript](https://www.typescriptlang.org/) | Tipagem das props e componentes |
+| [Vite](https://vite.dev/) | Ambiente de desenvolvimento e build |
+| [Tailwind CSS 4](https://tailwindcss.com/) | Estilização |
+| [Lucide React](https://lucide.dev/) | Ícones |
+| ESLint | Padronização do código |
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+## 📁 Estrutura
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```
+src/
+├── components/
+│   ├── Hero.tsx            # Seção principal com CTAs
+│   ├── Services.tsx        # Lista de serviços
+│   ├── ServiceCard.tsx     # Card reutilizável de serviço
+│   ├── Contact.tsx         # Informações de contato
+│   └── shared/
+│       ├── Header.tsx      # Cabeçalho + menu mobile
+│       ├── Footer.tsx      # Rodapé com redes sociais
+│       ├── Button.tsx      # Botão com variantes primary/secondary
+│       └── WhatsAppButton.tsx  # Botão flutuante
+├── assets/                 # Imagens e logo
+├── styles/globals.css      # Estilos globais e tema
+├── App.tsx
+└── main.tsx
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## 🚀 Como rodar o projeto
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+**Pré-requisito:** [Node.js](https://nodejs.org/) 20 ou superior.
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+# Clone o repositório
+git clone https://github.com/DanieSolinho/barbearia-navalha.git
+
+# Entre na pasta
+cd barbearia-navalha
+
+# Instale as dependências
+npm install
+
+# Rode em modo de desenvolvimento
+npm run dev
 ```
+
+Acesse `http://localhost:5173` no navegador.
+
+### Outros comandos
+
+| Comando | O que faz |
+|---|---|
+| `npm run build` | Gera a versão de produção na pasta `dist/` |
+| `npm run preview` | Visualiza a build de produção localmente |
+| `npm run lint` | Verifica o código com o ESLint |
+
+## 🔧 Personalização
+
+Para adaptar a página a outra barbearia:
+
+- **Serviços e preços:** edite o array `services` em `src/components/Services.tsx`
+- **WhatsApp:** troque o número nos links `wa.me` dos componentes
+- **Endereço e horário:** `src/components/Contact.tsx`
+- **Logo e imagem de fundo:** substitua os arquivos em `src/assets/`
+
+## 👩‍💻 Autora
+
+Desenvolvido por **Daniella Solinho**
+
+[![GitHub](https://img.shields.io/badge/GitHub-DanieSolinho-181717?logo=github)](https://github.com/DanieSolinho)
+[![Site](https://img.shields.io/badge/Site-daniellasolinho.com.br-D4AF37)](https://daniellasolinho.com.br)

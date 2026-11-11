@@ -2,8 +2,12 @@
 
 Landing page para uma barbearia, pensada para **transformar visitas em agendamentos pelo WhatsApp**. Visual escuro com detalhes em dourado, layout responsivo e chamadas para ação em todos os pontos da página.
 
-<!-- Dica: tire um print da página, salve como docs/preview.png e troque este comentário por:
-![Preview da landing page](docs/preview.png) -->
+<p align="center">
+  <img src="docs/preview-desktop.jpg" alt="Versão desktop da landing page" width="68%">
+  &nbsp;
+  <img src="docs/preview-mobile.jpg" alt="Versão mobile da landing page" width="22%">
+</p>
+<p align="center"><em>Desktop e mobile — layout 100% responsivo</em></p>
 
 ## 🎯 Objetivo
 
